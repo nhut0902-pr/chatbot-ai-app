@@ -1,0 +1,6 @@
+{
+  "name": "Cerebras Chat",
+  "description": "An AI Chat assistant powered by Cerebras API with standard and custom LLM models, featuring a modern Dark mode interface and local persistent history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
