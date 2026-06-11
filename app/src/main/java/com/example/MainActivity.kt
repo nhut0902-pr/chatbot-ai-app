@@ -9,12 +9,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.providers.ChatViewModel
-import com.example.screens.ChatScreen
+import com.example.providers.TtsViewModel
+import com.example.screens.TtsScreen
 import com.example.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
-    private val viewModel: ChatViewModel by viewModels()
+    private val viewModel: TtsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +24,11 @@ class MainActivity : ComponentActivity() {
         
         setContent {
             MyApplicationTheme(
-                darkTheme = true, // Force Dark Theme matching ChatGPT style
-                dynamicColor = false // Keep consistent ChatGPT sleek dark colors
+                darkTheme = true, // Force Premium Dark Slate aesthetic
+                dynamicColor = false
             ) {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ChatScreen(
+                    TtsScreen(
                         viewModel = viewModel,
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -37,9 +37,9 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        // Safeguard to check API Key configuration on window focus/resume
-        viewModel.checkApiKeyStatus()
+    override fun onPause() {
+        super.onPause()
+        // Stop playing audio when the user minimises the activity
+        viewModel.stopAudio()
     }
 }

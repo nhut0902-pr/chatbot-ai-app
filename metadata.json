@@ -1,6 +1,6 @@
 {
-  "name": "Cerebras Chat",
-  "description": "An AI Chat assistant powered by Cerebras API with standard and custom LLM models, featuring a modern Dark mode interface and local persistent history.",
+  "name": "Voice TTS App",
+  "description": "A native Voice TTS App built with Kotlin/Compose that translates text into multiple global languages (Vietnamese, English, Japanese, Korean) with custom voice gender selections, auto play, and a rolling 10-item local audio caching container.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
